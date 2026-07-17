@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
                     // Representational State Transfer (REST).
 public class PracticeController {
 
-    @GetMapping("/hii") // It is the endpoint of API.
+    @GetMapping("/hi") // It is the endpoint of API.
     public String sayHelloHumans(){
         return "Hello Humans";
     }
