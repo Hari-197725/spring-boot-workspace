@@ -1,4 +1,4 @@
-package com.springboot.practice;
+package com.springboot.demo;
 
 public class TodoRepositoryDemo {
 

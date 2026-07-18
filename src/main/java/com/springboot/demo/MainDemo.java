@@ -1,6 +1,6 @@
-package com.springboot.practice;
+package com.springboot.demo;
 
-public class MainClass {
+public class MainDemo {
 
     public static void main(String[] args) {
         TodoServiceDemo todoServiceDemo = new TodoServiceDemo();
