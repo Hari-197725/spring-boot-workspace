@@ -1,12 +1,9 @@
 package com.springboot.practice;
 
-import org.springframework.stereotype.Component;
+import com.springboot.practice.models.Todo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Component  // This is also same as service class's @Bean concept.
-public class TodoRepository {
-
-    public String getAllTodos() {
-        return "Todos";
-    }
+//    CRUD - Create, Read, Update, Delete.
+public interface TodoRepository extends JpaRepository<Todo, Long> {
 
 }

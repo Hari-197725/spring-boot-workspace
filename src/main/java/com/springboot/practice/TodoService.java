@@ -1,7 +1,10 @@
 package com.springboot.practice;
 
+import com.springboot.practice.models.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service // This is also a @Bean data type  but in common service classes use this @Service instead of @Bean
 public class TodoService {
@@ -17,7 +20,37 @@ public class TodoService {
 //        todoRepository = new TodoRepository();
 //    }
 
-    public void printTodos() {
-        System.out.println(todoRepository.getAllTodos());
+    public Todo createTodo(Todo todo) {
+        return todoRepository.save(todo);
     }
+
+//    public Todo getTodoById(Long id) {
+//        return todoRepository.getReferenceById(id);
+//    }
+
+
+    public Todo getTodoById(Long id) {
+        return todoRepository.findById(id).orElseThrow(() -> new RuntimeException("Todo not found"));
+    }
+
+    public List<Todo> getAllTodos() {
+        return todoRepository.findAll();
+    }
+
+    public Todo updateTodo(Todo todo) {
+        return todoRepository.save(todo);
+    }
+
+    public void deleteTodoById(Long id) {
+        todoRepository.delete(getTodoById(id));
+    }
+
+    public void deleteTodo(){
+        todoRepository.deleteAll();
+    }
+
+//    public void deleteTodo(Todo todo) {
+//        todoRepository.delete(todo);
+//    }
+
 }
